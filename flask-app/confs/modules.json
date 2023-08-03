@@ -1,0 +1,8 @@
+{
+  "modules": {
+    "172.18.191.21": "director.json",
+    "172.18.191.22": "operator1.json",
+    "172.18.191.24": "assistant.json",
+    "172.18.198.39": "director.json"
+  }
+}

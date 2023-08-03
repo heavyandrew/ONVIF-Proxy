@@ -1,0 +1,155 @@
+swagger: "2.0"
+info:
+  description: "Данное API предназначено для конфигурации ONVIF-прокси"
+  version: "1.0.0"
+  title: "ONVIF Proxy"
+tags:
+- name: "Получение технической информации"
+  description: "Получение технической информации, нужной для работы пультов"
+- name: "Настройка"
+  description: "Изменение настроек ONVIF-Proxy"
+schemes:
+- "http"
+paths:
+  /preset/<preset>:
+    get:
+      tags:
+      - "Настройка"
+      summary: "Смена пресета"
+      description: "Запрос на смену пресета"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Словарь из одного значения"
+          schema:
+            type: "object"
+            properties:
+              number:
+                type: "integer"
+  /ports:
+    get:
+      tags:
+      - "Получение технической информации"
+      summary: "Получение разбивки портов, на которых развернуты инстансы"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Словарь из одного значения"
+          schema:
+            type: "object"
+            properties:
+              number:
+                type: "integer"
+  /preset/total:
+    get:
+      tags:
+      - "Получение технической информации"
+      summary: "Получение количества пресетов"
+      description: "Получение количества пресетов"
+      produces:
+      - "text/plain"
+      responses:
+        200:
+          description: "Словарь из одного значения"
+          schema:
+            type: "object"
+            properties:
+              number:
+                type: "integer"
+  /inconf:
+    get:
+      tags:
+        - "Получение технической информации"
+      summary: "Получение разбивки портов и занесенных камер в этом конфиге"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Словарь из двух словарей: с портами и с занесенными камерами"
+          schema:
+            type: "object"
+            properties:
+              ports:
+                type: "object"
+                properties:
+                  first:
+                    type: "integer"
+                  last:
+                    type: "integer"
+              presets:
+                type: "object"
+                properties:
+                  1:
+                    type: "array"
+                    example: ["1","2","5"]
+                  2:
+                    type: "array"
+                    example: [ "1","3","4" ]
+  /inconf/all:
+    get:
+      tags:
+        - "Получение технической информации"
+      summary: "Получение разбивки портов и занесенных камер во всех конфигах"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Словарь из словарей"
+          type: "object"
+          properties:
+            conf_name1:
+              type: "object"
+              properties:
+                ports:
+                  type: "object"
+                  properties:
+                    first:
+                      type: "integer"
+                    last:
+                      type: "integer"
+                presets:
+                  type: "object"
+                  properties:
+                    1:
+                      type: "array"
+                      example: [ "1","2","5" ]
+                    2:
+                      type: "array"
+                      example: [ "1","3","4" ]
+            conf_name2:
+              type: "object"
+              properties:
+                ports:
+                  type: "object"
+                  properties:
+                    first:
+                      type: "integer"
+                    last:
+                      type: "integer"
+                presets:
+                  type: "object"
+                  properties:
+                    1:
+                      type: "array"
+                      example: [ "1","2","5" ]
+                    2:
+                      type: "array"
+                      example: [ "1","3","4" ]
+  /preset/total/<preset>:
+    get:
+      tags:
+      - "Получение технической информации"
+      summary: "Получение количества камер в пресете"
+      description: "Получение количества камер в пресете"
+      produces:
+      - "text/plain"
+      responses:
+        "200":
+          description: "Возвращено число камер в пресете"
+        "400":
+          description: "Нет такого пресета"
+externalDocs:
+  description: "Инструкция по работе с сервисом"
+  url: "https://wiki.miem.hse.ru/ru/Projects/19/docs/onvif-proxy/flask/set-up-instruction"

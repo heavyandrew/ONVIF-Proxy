@@ -1,0 +1,10 @@
+[Unit]
+Description=Onvif Proxy in systemd
+
+[Service]
+Restart=always
+WorkingDirectory=/home/pi/onvif-proxy/flask-app
+ExecStart=/home/pi/onvif-proxy/flask-app/onvifenv/bin/python /home/pi/onvif-proxy/flask-app/main.py --ip 172.18.191.23 --port 80 --conf_path "/home/pi/onvif-proxy/flask-app/confs/conf.json" --cam_num 0
+
+[Install]
+WantedBy=multi-user.target

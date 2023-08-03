@@ -1,0 +1,6 @@
+__pycache__/
+*backup*
+*.bp*
+django-app/onvif/
+*db.sqlite3
+flask-app/onvifenv/
