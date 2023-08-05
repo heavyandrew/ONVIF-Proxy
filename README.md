@@ -64,4 +64,12 @@ sudo systemd enable onvif-proxy.service
 ### Docker-compose
 1. Clone repo
 2. Install docker-compose
-3. 
+3. Put conf.json inside /flask-app, /flask-app/confs/ or another catalogue inside
+4. Describe all instances in docker-compose.yml (port in **--port** and **ports**(on both sides of :) must be the same)
+5. Run and check if it works
+```
+docker-compose up -d
+```
+```
+docker-compose logs
+```
