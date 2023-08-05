@@ -4,175 +4,63 @@ services:
   onvif-proxy:
     image: onvif-proxy
     container_name: onvif-proxy
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 80 --conf_path "/flask-app/confs/operator1.json" --cam_num 2'
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 80 --conf_path "/flask-app/confs/conf.json" --cam_num 0'
     restart: always
     ports:
       - "80:80"
 
-  onvif-proxy11:
+  onvif-proxy1:
     image: onvif-proxy
-    container_name: onvif-proxy11
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8001 --conf_path "/flask-app/confs/operator1.json" --cam_num 1'
+    container_name: onvif-proxy1
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8001 --conf_path "/flask-app/confs/conf.json" --cam_num 1'
     restart: always
     ports:
       - "8001:8001"
-
-  onvif-proxy12:
+      
+  onvif-proxy2:
     image: onvif-proxy
-    container_name: onvif-proxy12
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8002 --conf_path "/flask-app/confs/operator1.json" --cam_num 2'
+    container_name: onvif-proxy2
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8002 --conf_path "/flask-app/confs/conf.json" --cam_num 2'
     restart: always
     ports:
       - "8002:8002"
-
-  onvif-proxy13:
+      
+  onvif-proxy3:
     image: onvif-proxy
-    container_name: onvif-proxy13
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8003 --conf_path "/flask-app/confs/operator1.json" --cam_num 3'
+    container_name: onvif-proxy3
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8003 --conf_path "/flask-app/confs/conf.json" --cam_num 3'
     restart: always
     ports:
       - "8003:8003"
-
-  onvif-proxy14:
+      
+  onvif-proxy4:
     image: onvif-proxy
-    container_name: onvif-proxy14
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8004 --conf_path "/flask-app/confs/operator1.json" --cam_num 4'
+    container_name: onvif-proxy4
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8004 --conf_path "/flask-app/confs/conf.json" --cam_num 4'
     restart: always
     ports:
       - "8004:8004"
-
-  onvif-proxy15:
+      
+  onvif-proxy5:
     image: onvif-proxy
-    container_name: onvif-proxy15
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8005 --conf_path "/flask-app/confs/operator1.json" --cam_num 5'
+    container_name: onvif-proxy5
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8005 --conf_path "/flask-app/confs/conf.json" --cam_num 5'
     restart: always
     ports:
       - "8005:8005"
-
-  onvif-proxy16:
+      
+  onvif-proxy6:
     image: onvif-proxy
-    container_name: onvif-proxy16
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8006 --conf_path "/flask-app/confs/operator1.json" --cam_num 6'
+    container_name: onvif-proxy6
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8006 --conf_path "/flask-app/confs/conf.json" --cam_num 6'
     restart: always
     ports:
       - "8006:8006"
-
-  onvif-proxy17:
+      
+  onvif-proxy7:
     image: onvif-proxy
-    container_name: onvif-proxy17
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 8007 --conf_path "/flask-app/confs/operator1.json" --cam_num 7'
+    container_name: onvif-proxy7
+    command: 'onvif/bin/python main.py --ip 0.0.0.0 --port 8007 --conf_path "/flask-app/confs/conf.json" --cam_num 7'
     restart: always
     ports:
       - "8007:8007"
-
-  onvif-proxy21:
-    image: onvif-proxy
-    container_name: onvif-proxy21
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9001 --conf_path "/flask-app/confs/director.json" --cam_num 1'
-    restart: always
-    ports:
-      - "9001:9001"
-
-  onvif-proxy22:
-    image: onvif-proxy
-    container_name: onvif-proxy22
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9002 --conf_path "/flask-app/confs/director.json" --cam_num 2'
-    restart: always
-    ports:
-      - "9002:9002"
-
-  onvif-proxy23:
-    image: onvif-proxy
-    container_name: onvif-proxy23
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9003 --conf_path "/flask-app/confs/director.json" --cam_num 3'
-    restart: always
-    ports:
-      - "9003:9003"
-
-  onvif-proxy24:
-    image: onvif-proxy
-    container_name: onvif-proxy24
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9004 --conf_path "/flask-app/confs/director.json" --cam_num 4'
-    restart: always
-    ports:
-      - "9004:9004"
-
-  onvif-proxy25:
-    image: onvif-proxy
-    container_name: onvif-proxy25
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9005 --conf_path "/flask-app/confs/director.json" --cam_num 5'
-    restart: always
-    ports:
-      - "9005:9005"
-
-  onvif-proxy26:
-    image: onvif-proxy
-    container_name: onvif-proxy26
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9006 --conf_path "/flask-app/confs/director.json" --cam_num 6'
-    restart: always
-    ports:
-      - "9006:9006"
-
-  onvif-proxy27:
-    image: onvif-proxy
-    container_name: onvif-proxy27
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 9007 --conf_path "/flask-app/confs/director.json" --cam_num 7'
-    restart: always
-    ports:
-      - "9007:9007"
-
-  onvif-proxy31:
-    image: onvif-proxy
-    container_name: onvif-proxy31
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10001 --conf_path "/flask-app/confs/assistant.json" --cam_num 1'
-    restart: always
-    ports:
-      - "10001:10001"
-
-  onvif-proxy32:
-    image: onvif-proxy
-    container_name: onvif-proxy32
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10002 --conf_path "/flask-app/confs/assistant.json" --cam_num 2'
-    restart: always
-    ports:
-      - "10002:10002"
-
-  onvif-proxy33:
-    image: onvif-proxy
-    container_name: onvif-proxy33
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10003 --conf_path "/flask-app/confs/assistant.json" --cam_num 3'
-    restart: always
-    ports:
-      - "10003:10003"
-
-  onvif-proxy34:
-    image: onvif-proxy
-    container_name: onvif-proxy34
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10004 --conf_path "/flask-app/confs/assistant.json" --cam_num 4'
-    restart: always
-    ports:
-      - "10004:10004"
-
-  onvif-proxy35:
-    image: onvif-proxy
-    container_name: onvif-proxy35
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10005 --conf_path "/flask-app/confs/assistant.json" --cam_num 5'
-    restart: always
-    ports:
-      - "10005:10005"
-
-  onvif-proxy36:
-    image: onvif-proxy
-    container_name: onvif-proxy36
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10006 --conf_path "/flask-app/confs/assistant.json" --cam_num 6'
-    restart: always
-    ports:
-      - "10006:10006"
-
-  onvif-proxy37:
-    image: onvif-proxy
-    container_name: onvif-proxy37
-    command: 'onvif/bin/python main.py --ip 172.18.191.17 --port 10007 --conf_path "/flask-app/confs/assistant.json" --cam_num 7'
-    restart: always
-    ports:
-      - "10007:10007"
